@@ -1,10 +1,9 @@
-import AppRouter from "./routes/AppRouter"
-
+import Nancy from "./pages/Nancy"
 
 function App() {
   return (
 
-    <AppRouter />
+    <Nancy />
 
   )
 
