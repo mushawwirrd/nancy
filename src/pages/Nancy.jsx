@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react"
 
-function Nancy() {
+export default function Nancy() {
     const [income, setIncome] = useState({
         mainIncome: "",
         sideIncome: "",
@@ -57,120 +57,115 @@ function Nancy() {
     }, [spending])
 
     return (
-        <div className="">
+        <div>
 
             <div className="absolute z-10">
                 <nav className="px-14 py-5 ">
 
-                    <div clas>
+                    <div>
                         <a href="#" className="font-semibold text-xl text-white" >NANCY</a>
                     </div>
 
                 </nav>
             </div>
 
+            <div
+                className=" flex flex-col items-center justify-center pt-16 lg:pt-10 h-max lg:h-screen bg-cover bg-center"
+                style={{ backgroundImage: "url(nncy.jpg)" }} >
 
-            <div>
-                <div className="flex flex-col items-center justify-center pt-14 bg-blue-500 ">
-
-                    <div className="top-[4rem] text-center mb-8">
-                        <h1 className="text-3xl md:text-4xl text-white font-bold w-60 md:w-fit">Cek Kondisi Kesehatan Keuangan Anda</h1>
-                    </div>
-
-                    <div className=" top-[148px] px-12 py-10 rounded-3xl bg-white shadow-lg h-[730px] md:h-[456px]">
-                        <form action="" onSubmit={submitHandle}>
-
-                            <div className=" flex flex-col md:flex-row items-center justify-center">
-
-                                <div className="pr-0 md:pr-6">
-                                    <div className="mb-3">
-                                        <p>Pendapatan</p>
-                                    </div>
-
-                                    <label className="block text-gray-500">Pendapatan utama</label>
-                                    <input
-                                        type="text"
-                                        name="mainIncome"
-                                        value={income.mainIncome}
-                                        onChange={incomeChange}
-                                        className="border p-2 rounded-md mt-1" />
-
-                                    <label className="block mt-3 text-gray-500">Pendapatan sampingan</label>
-                                    <input
-                                        type="text"
-                                        name="sideIncome"
-                                        value={income.sideIncome}
-                                        onChange={incomeChange}
-                                        className="border p-2 rounded-md mt-1" />
-
-                                    <label className="block mt-3 text-gray-500">Investasi</label>
-                                    <input
-                                        type="text"
-                                        name="passiveIncome"
-                                        value={income.passiveIncome}
-                                        onChange={incomeChange}
-                                        className="border p-2 rounded-md mt-1" />
-                                </div>
-
-                                <div className="pl-0 md:pl-6 mt-6 md:mt-0">
-                                    <div className="mb-3">
-                                        <p>Pengeluaran</p>
-                                    </div>
-
-                                    <label className="block text-gray-500">Kebutuhan</label>
-                                    <input
-                                        type="text"
-                                        name="kebutuhan"
-                                        value={spending.kebutuhan}
-                                        onChange={spendingChange}
-                                        className="p-2 border rounded-md mt-1" />
-
-                                    <label className="block mt-3 text-gray-500">Keinginan</label>
-                                    <input
-                                        type="text"
-                                        name="keinginan"
-                                        value={spending.keinginan}
-                                        onChange={spendingChange}
-                                        className="p-2 border rounded-md mt-1" />
-
-
-                                    <label className="block mt-3 text-gray-500">Hutang/Cicilan</label>
-                                    <input
-                                        type="text"
-                                        name="hutang"
-                                        value={spending.hutang}
-                                        onChange={spendingChange}
-                                        className="p-2 border rounded-md mt-1" />
-
-                                </div>
-
-                            </div>
-
-                            <div className="flex flex-col items-center justify-center mt-7">
-
-                                <div >
-                                    <button className="py-3 bg-blue-500 rounded-full w-48 text-white">Diagnosa</button>
-                                </div>
-
-                                <div className="mt-3">
-                                    {message === "Sehat" && <p>Wow, kondisi keuangan kamu sehat</p>}
-                                    {message === "Tidak sehat" && <p>Kondisi keuangan kamu belum sehat!</p>}
-                                    {message === "Kosong" && <p>Kamu belum input apa - apa</p>}
-                                </div>
-
-                            </div>
-
-
-                        </form>
-                    </div>
-
-
-
+                <div className="top-[4rem] text-center mb-4">
+                    <h1 className="text-xl lg:text-4xl text-white font-bold w-56 lg:w-fit">Cek Kondisi Kesehatan Keuangan Anda</h1>
                 </div>
+
+                <div className=" px-10 py-6 rounded-2xl bg-white/30 backdrop-blur-lg shadow-lg h-[690px] md:h-[400px] w-[330px] lg:w-fit mb-3">
+                    <form onSubmit={submitHandle}>
+
+                        <div className="flex flex-col md:flex-row items-center justify-center gap-4">
+
+                            <div className="flex flex-col  items-start justify-start w-full ">
+                                <div className="mb-1">
+                                    <p className="text-white text-lg">Pemasukan</p>
+                                </div>
+
+                                <label className="text-white text-sm block ">Pendapatan Utama</label>
+                                <input
+                                    type="text"
+                                    name="mainIncome"
+                                    value={income.mainIncome}
+                                    onChange={incomeChange}
+                                    className="p-2 border rounded-md mt-1 bg-transparent w-full text-white" />
+
+                                <label className="text-white text-sm block mt-2">Pendapatan sampingan</label>
+                                <input
+                                    type="text"
+                                    name="sideIncome"
+                                    value={income.sideIncome}
+                                    onChange={incomeChange}
+                                    className="p-2 border rounded-md mt-1 w-full bg-transparent text-white" />
+
+                                <label className="text-white text-sm block mt-2">Investasi</label>
+                                <input
+                                    type="text"
+                                    name="passiveIncome"
+                                    value={income.passiveIncome}
+                                    onChange={incomeChange}
+                                    className="p-2 border rounded-md mt-1 w-full bg-transparent text-white" />
+
+                            </div>
+
+                            <div className="flex flex-col items-start justify-start w-full  mt-6 md:mt-0">
+                                <div className="mb-1">
+                                    <p className="text-white text-lg">Pengeluaran</p>
+                                </div>
+
+                                <label className="block text-sm text-white">Kebutuhan</label>
+                                <input
+                                    type="text"
+                                    name="kebutuhan"
+                                    value={spending.kebutuhan}
+                                    onChange={spendingChange}
+                                    className="p-2 border rounded-md mt-1 w-full bg-transparent text-white" />
+
+                                <label className="block mt-2 text-sm text-white">Keinginan</label>
+                                <input
+                                    type="text"
+                                    name="keinginan"
+                                    value={spending.keinginan}
+                                    onChange={spendingChange}
+                                    className="p-2 border rounded-md mt-1 w-full bg-transparent text-white" />
+
+
+                                <label className="block mt-2 text-sm text-white">Hutang/Cicilan</label>
+                                <input
+                                    type="text"
+                                    name="hutang"
+                                    value={spending.hutang}
+                                    onChange={spendingChange}
+                                    className="p-2 border rounded-md mt-1 w-full bg-transparent text-white" />
+
+                            </div>
+
+                        </div>
+
+
+                        <div className="flex items-center justify-center mt-6">
+                            <button className="py-3 bg-blue-600 rounded-full w-48 text-white hover:bg-blue-700">Diagnosa</button>
+                        </div>
+
+                        <div className="flex items-center justify-center text-center mt-2">
+                            {message === "Sehat" && <p className="text-green-700">Wow, kondisi keuangan kamu sehat</p>}
+                            {message === "Tidak sehat" && <p className="text-red-700">Kondisi keuangan kamu belum sehat!</p>}
+                            {message === "Kosong" && <p>Kamu belum input apa - apa</p>}
+                        </div>
+
+                    </form>
+                </div>
+
             </div>
+
+
+
         </div>
 
     )
 }
-
-export default Nancy
